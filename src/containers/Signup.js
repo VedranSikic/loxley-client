@@ -57,18 +57,10 @@ export default function Signup() {
     return (
         <div className="Signup centered">
             <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="email" size="lg">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        autoFocus
-                        type="email"
-                        value={fields.email}
-                        onChange={handleFieldChange}
-                    />
-                </Form.Group>
                 <Form.Group controlId="firstName" size="lg">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
+                        autoFocus
                         type="text"
                         value={fields.firstName}
                         onChange={handleFieldChange}
@@ -79,6 +71,14 @@ export default function Signup() {
                     <Form.Control
                         type="text"
                         value={fields.lastName}
+                        onChange={handleFieldChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="email" size="lg">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        type="email"
+                        value={fields.email}
                         onChange={handleFieldChange}
                     />
                 </Form.Group>

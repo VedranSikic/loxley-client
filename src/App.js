@@ -10,7 +10,8 @@ import Footer from './components/Footer'
 import "./App.css";
 import Routes from "./Routes";
 import { AppContext } from "./libs/contextLib";
-import { Auth } from './api/api'
+
+import { AuthAPI } from './api/auth-api'
 
 function App() {
   const history = useHistory();
@@ -22,12 +23,12 @@ function App() {
   }, []);
 
   async function onLoad() {
-    userHasAuthenticated(Auth.isAuthenticated());
+    userHasAuthenticated(AuthAPI.isAuthenticated());
     setIsAuthenticating(false);
   }
 
   async function handleLogout() {
-    Auth.signOut();
+    AuthAPI.signOut();
     userHasAuthenticated(false);
 
     history.push("/login");

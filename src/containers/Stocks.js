@@ -4,7 +4,11 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
-import { Auth, StockAPI, IndexAPI } from "../api/api";
+import { IndexAPI } from "../api/index-api";
+import { AuthAPI} from "../api/auth-api";
+import { DataAPI } from "../api/data-api";
+
+
 import { onError } from "../libs/errorLib";
 
 import "./Stocks.css"
@@ -18,13 +22,13 @@ export default function Notes() {
 
     useEffect(() => {
         async function onLoad() {
-            if (!Auth.isAuthenticated()) {
+            if (!AuthAPI.isAuthenticated()) {
                 return history.push("/login")
             }
 
             try {
                 // Paralelize this
-                const { stock, quote } = await StockAPI.profile(id);
+                const { stock, quote } = await DataAPI.profile(id);
                 const nasdaq = await IndexAPI.getNasdaq();
                 const snp500 = await IndexAPI.getSnP500();
                 const dow = await IndexAPI.getDOW();

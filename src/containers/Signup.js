@@ -6,7 +6,8 @@ import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import "./Signup.css";
-import { Auth } from "../api/api";
+
+import { AuthAPI } from "../api/auth-api";
 
 export default function Signup() {
     const [fields, handleFieldChange] = useFormFields({
@@ -37,7 +38,7 @@ export default function Signup() {
         setIsLoading(true);
 
         try {
-            await Auth.signup({
+            await AuthAPI.signup({
                 email: fields.email,
                 password: fields.password,
                 firstName: fields.firstName,

@@ -6,7 +6,8 @@ import { LinkContainer } from "react-router-bootstrap";
 
 import { useAppContext } from "../libs/contextLib";
 import { onError } from "../libs/errorLib";
-import { StockAPI } from "../api/api"
+
+import { DataAPI } from "../api/data-api"
 
 import "./Home.css";
 
@@ -22,7 +23,7 @@ export default function Home() {
       }
 
       try {
-        const stocks = await StockAPI.read();
+        const stocks = await DataAPI.read();
         setStocks(stocks);
       } catch (e) {
         onError(e);

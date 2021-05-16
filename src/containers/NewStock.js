@@ -7,7 +7,9 @@ import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import "./NewStock.css";
-import { Auth, StockAPI } from "../api/api";
+
+import { AuthAPI } from "../api/auth-api"
+import { DataAPI } from "../api/data-api";
 
 export default function NewStock() {
     const [fields, handleFieldChange] = useFormFields({
@@ -22,7 +24,7 @@ export default function NewStock() {
 
     useEffect(() => {
         async function onLoad() {
-            if (!Auth.isAuthenticated()) {
+            if (!AuthAPI.isAuthenticated()) {
                 history.push("/login")
             }
         }
@@ -44,7 +46,7 @@ export default function NewStock() {
         setIsLoading(true);
 
         try {
-            await StockAPI.create({
+            await DataAPI.create({
                 symbol: fields.symbol,
                 price: fields.price,
                 date: fields.date,

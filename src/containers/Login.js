@@ -8,7 +8,7 @@ import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 
-import { Auth } from '../api/api'
+import { AuthAPI } from '../api/auth-api'
 
 
 import "./Login.css";
@@ -32,7 +32,7 @@ export default function Login() {
     setIsLoading(true);
 
     try {
-      await Auth.login(fields.email, fields.password);
+      await AuthAPI.login(fields.email, fields.password);
       userHasAuthenticated(true);
       history.push("/");
     } catch (e) {

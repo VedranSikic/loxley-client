@@ -49,6 +49,7 @@ export default function Login() {
           <Form.Control
             autoFocus
             type="email"
+            placeholder="Email"
             value={fields.email}
             onChange={handleFieldChange}
           />
@@ -57,6 +58,7 @@ export default function Login() {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            placeholder="Password"
             value={fields.password}
             onChange={handleFieldChange}
           />

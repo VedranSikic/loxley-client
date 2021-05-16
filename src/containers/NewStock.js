@@ -66,6 +66,7 @@ export default function NewStock() {
                     <Form.Control
                         autoFocus
                         type="text"
+                        placeholder="Stock's symbol"
                         value={fields.symbol}
                         onChange={handleFieldChange}
                     />
@@ -75,6 +76,7 @@ export default function NewStock() {
                     <Form.Control
                         type="number"
                         value={fields.price}
+                        placeholder="Stock's price"
                         step="0.01"
                         onChange={handleFieldChange}
                     />

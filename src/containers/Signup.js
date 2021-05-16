@@ -58,18 +58,20 @@ export default function Signup() {
         <div className="Signup centered">
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="firstName" size="lg">
-                    <Form.Label>First Name</Form.Label>
+                    <Form.Label>First name</Form.Label>
                     <Form.Control
                         autoFocus
                         type="text"
+                        placeholder="First name"
                         value={fields.firstName}
                         onChange={handleFieldChange}
                     />
                 </Form.Group>
                 <Form.Group controlId="lastName" size="lg">
-                    <Form.Label>Last Name</Form.Label>
+                    <Form.Label>Last name</Form.Label>
                     <Form.Control
                         type="text"
+                        placeholder="last name"
                         value={fields.lastName}
                         onChange={handleFieldChange}
                     />
@@ -78,6 +80,7 @@ export default function Signup() {
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                         type="email"
+                        placeholder="Email"
                         value={fields.email}
                         onChange={handleFieldChange}
                     />
@@ -86,6 +89,7 @@ export default function Signup() {
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         type="password"
+                        placeholder="Min 8 char password"
                         value={fields.password}
                         onChange={handleFieldChange}
                     />
@@ -94,6 +98,7 @@ export default function Signup() {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         type="password"
+                        placeholder="Confirm password"
                         onChange={handleFieldChange}
                         value={fields.confirmPassword}
                     />

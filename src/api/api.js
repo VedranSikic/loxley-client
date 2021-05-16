@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 //TODO Replace this
-const apiUrl = 'http://node-express-env.eba-cf9fqmze.eu-central-1.elasticbeanstalk.com'
+const apiUrl = '//node-express-env.eba-cf9fqmze.eu-central-1.elasticbeanstalk.com'
 const alphaVantageUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&apikey=MKNPM7HCUX6EEFWD&symbol='
 
 const IndexAPI = {

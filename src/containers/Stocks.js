@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Card from "react-bootstrap/card";
+import Card from "react-bootstrap/Card";
 
 import { Auth, StockAPI, IndexAPI } from "../api/api";
 import { onError } from "../libs/errorLib";

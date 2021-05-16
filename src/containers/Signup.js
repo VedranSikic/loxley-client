@@ -27,7 +27,7 @@ export default function Signup() {
             fields.email.length > 0 &&
             fields.firstName.length > 0 &&
             fields.lastName.length > 0 &&
-            fields.password.length > 0 &&
+            fields.password.length > 7 &&
             fields.password === fields.confirmPassword
         );
     }
